@@ -1,0 +1,21 @@
+{% extends "layout.twig" %}
+{% block content %}
+
+	<h1>Add Project</h1>
+	<div class="alert alert-primary" role="alert">{{ responseMessage }}</div>
+
+	<form action="../Project/add" method="post" accept-charset="utf-8" enctype="multipart/form-data">
+		<label for="">Title:</label>
+		<input type="text" name="title">
+		<label for="">Description:</label>
+		<input type="text" name="description">
+		<div class="custom-file">
+         <input style="width:25%;" type="file" class="custom-file-input" name="logo" lang="es">
+         <label style="width:25%;" class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
+        </div>
+		<br>
+		<br>
+		<button type="submit">Save</button>
+	</form>
+
+{% endblock %}
