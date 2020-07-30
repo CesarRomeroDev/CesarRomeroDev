@@ -20,7 +20,7 @@ use Aura\Router\RouterContainer;
 $capsule = new Capsule;
 
 $capsule->addConnection([
-    'driver'    =>  $_ENV['DB_DRIVER'],
+    'driver'    => 'mysql',
     'host'      =>  $_ENV['DB_HOST'],
     'database'  =>  $_ENV['DB_NAME'],
     'username'  =>  $_ENV['DB_USER'],
