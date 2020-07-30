@@ -80,12 +80,12 @@ $map->post('saveaddProject', '/Project/add', [
 $map->get('addUser', '/User/add', [
     'controller' => 'App\Controllers\usersController',
     'action' => 'usersAction',
-    'auth' => true
+    //'auth' => true
 ]);
 $map->post('saveaddUser', '/User/save', [
     'controller' => 'App\Controllers\usersController',
     'action' => 'postSaveUser',
-    'auth' => true
+    //'auth' => true
 ]);
 $map->get('login', '/login', [
     'controller' => 'App\Controllers\AuthController',
