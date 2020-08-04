@@ -20,7 +20,7 @@ use Aura\Router\RouterContainer;
 $capsule = new Capsule;
 
 $capsule->addConnection([
-    'driver'    =>  $_ENV['DB_DRIVER'],
+    'driver'    => 'mysql',
     'host'      =>  $_ENV['DB_HOST'],
     'database'  =>  $_ENV['DB_NAME'],
     'username'  =>  $_ENV['DB_USER'],
@@ -47,59 +47,59 @@ $request = Laminas\Diactoros\ServerRequestFactory::fromGlobals(
 
 $routerContainer = new RouterContainer();
 $map = $routerContainer->getMap();
-$map->get('index', '/', [
+$map->get('index', '/CesarRomeroDev/', [
     'controller' => 'App\Controllers\indexController',
     'action' => 'indexAction'
 ]);
 
 
-$map->get('addJob', '/Job/add', [
+$map->get('addJob', '/CesarRomeroDev/Job/add', [
     'controller' => 'App\Controllers\jobsController',
     'action' => 'jobsAction',
     'auth' => true
 ]);
-$map->post('saveaddJob', '/Job/add', [
+$map->post('saveaddJob', '/CesarRomeroDev/Job/add', [
     'controller' => 'App\Controllers\jobsController',
     'action' => 'jobsAction',
     'auth' => true
 ]);
 
 
-$map->get('addProject', '/Project/add', [
+$map->get('addProject', '/CesarRomeroDev/Project/add', [
     'controller' => 'App\Controllers\projectController',
     'action' => 'projectAction',
     'auth' => true
 ]);
-$map->post('saveaddProject', '/Project/add', [
+$map->post('saveaddProject', '/CesarRomeroDev/Project/add', [
     'controller' => 'App\Controllers\projectController',
     'action' => 'projectAction',
     'auth' => true
 ]);
 
 
-$map->get('addUser', '/User/add', [
+$map->get('addUser', '/CesarRomeroDev/User/add', [
     'controller' => 'App\Controllers\usersController',
     'action' => 'usersAction',
     'auth' => true
 ]);
-$map->post('saveaddUser', '/User/save', [
+$map->post('saveaddUser', '/CesarRomeroDev/User/save', [
     'controller' => 'App\Controllers\usersController',
     'action' => 'postSaveUser',
     'auth' => true
 ]);
-$map->get('login', '/login', [
+$map->get('login', '/CesarRomeroDev/login', [
     'controller' => 'App\Controllers\AuthController',
     'action' => 'getLogin'
 ]);
-$map->get('logout', '/logout', [
+$map->get('logout', '/CesarRomeroDev/logout', [
     'controller' => 'App\Controllers\AuthController',
     'action' => 'getLogout'
 ]);
-$map->post('auth', '/auth', [
+$map->post('auth', '/CesarRomeroDev/auth', [
     'controller' => 'App\Controllers\AuthController',
     'action' => 'postLogin'
 ]);
-$map->get('admin', '/admin', [
+$map->get('admin', '/CesarRomeroDev/admin', [
     'controller' => 'App\Controllers\adminController',
     'action' => 'getIndex',
     'auth' => true
@@ -116,7 +116,7 @@ if (!$route) {
 
     $sessionuUserId = $_SESSION['userId'] ?? null;
     if ($needsAuth && !$sessionuUserId){
-         header('location: /');
+         header('location: /CesarRomeroDev/');
         exit;
     }
 
