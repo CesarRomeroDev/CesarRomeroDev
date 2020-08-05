@@ -12,7 +12,7 @@ class indexController extends baseController {
 
         //index.php vistas
         $lastName = 'Romero Esquivel';
-        $name = "Julio Cesar $lastName";
+        $name = "Julio César $lastName";
         $limitMonths = 2000;
 
         return $this->renderHTML('index.twig', [
