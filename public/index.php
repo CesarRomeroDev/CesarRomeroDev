@@ -47,59 +47,59 @@ $request = Laminas\Diactoros\ServerRequestFactory::fromGlobals(
 
 $routerContainer = new RouterContainer();
 $map = $routerContainer->getMap();
-$map->get('index', '/CesarRomeroDev/', [
+$map->get('index', '/', [
     'controller' => 'App\Controllers\indexController',
     'action' => 'indexAction'
 ]);
 
 
-$map->get('addJob', '/CesarRomeroDev/Job/add', [
+$map->get('addJob', '/Job/add', [
     'controller' => 'App\Controllers\jobsController',
     'action' => 'jobsAction',
     'auth' => true
 ]);
-$map->post('saveaddJob', '/CesarRomeroDev/Job/add', [
+$map->post('saveaddJob', '/Job/add', [
     'controller' => 'App\Controllers\jobsController',
     'action' => 'jobsAction',
     'auth' => true
 ]);
 
 
-$map->get('addProject', '/CesarRomeroDev/Project/add', [
+$map->get('addProject', '/Project/add', [
     'controller' => 'App\Controllers\projectController',
     'action' => 'projectAction',
     'auth' => true
 ]);
-$map->post('saveaddProject', '/CesarRomeroDev/Project/add', [
+$map->post('saveaddProject', '/Project/add', [
     'controller' => 'App\Controllers\projectController',
     'action' => 'projectAction',
     'auth' => true
 ]);
 
 
-$map->get('addUser', '/CesarRomeroDev/User/add', [
+$map->get('addUser', '/User/add', [
     'controller' => 'App\Controllers\usersController',
     'action' => 'usersAction',
     'auth' => true
 ]);
-$map->post('saveaddUser', '/CesarRomeroDev/User/save', [
+$map->post('saveaddUser', '/User/save', [
     'controller' => 'App\Controllers\usersController',
     'action' => 'postSaveUser',
     'auth' => true
 ]);
-$map->get('login', '/CesarRomeroDev/login', [
+$map->get('login', '/login', [
     'controller' => 'App\Controllers\AuthController',
     'action' => 'getLogin'
 ]);
-$map->get('logout', '/CesarRomeroDev/logout', [
+$map->get('logout', '/logout', [
     'controller' => 'App\Controllers\AuthController',
     'action' => 'getLogout'
 ]);
-$map->post('auth', '/CesarRomeroDev/auth', [
+$map->post('auth', '/auth', [
     'controller' => 'App\Controllers\AuthController',
     'action' => 'postLogin'
 ]);
-$map->get('admin', '/CesarRomeroDev/admin', [
+$map->get('admin', '/admin', [
     'controller' => 'App\Controllers\adminController',
     'action' => 'getIndex',
     'auth' => true
@@ -116,7 +116,7 @@ if (!$route) {
 
     $sessionuUserId = $_SESSION['userId'] ?? null;
     if ($needsAuth && !$sessionuUserId){
-         header('location: /CesarRomeroDev/');
+         header('location: /');
         exit;
     }
 
